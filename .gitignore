@@ -1,2 +1,31 @@
+# top level
+
 Todo.md
 .env
+config/config.json
+
+# site public folder:
+# build output
+apps/site-public/dist/
+# generated types
+apps/site-public/.astro/
+
+# dependencies
+apps/site-public/node_modules/
+
+# logs
+apps/site-public/npm-debug.log*
+apps/site-public/yarn-debug.log*
+apps/site-public/yarn-error.log*
+apps/site-public/pnpm-debug.log*
+
+
+# environment variables
+apps/site-public/.env
+apps/site-public/.env.production
+
+# macOS-specific files
+apps/site-public/.DS_Store
+
+# jetbrains setting folder
+apps/site-public/.idea/
