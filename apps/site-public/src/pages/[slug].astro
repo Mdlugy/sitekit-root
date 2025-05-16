@@ -1,0 +1,53 @@
+---
+console.log("Loading page...");
+import { loadSiteData } from "../lib/loadSiteData.js";
+import RenderPage from "../lib/renderPage.jsx";
+
+export async function getStaticPaths() {
+  const { data } = await loadSiteData();
+
+  return data.map((doc) => ({
+    params: { slug: doc.slug },
+    props: { page: doc },
+  }));
+}
+interface PageData {
+  meta?: {
+    title?: string;
+    [key: string]: any;
+  };
+  [key: string]: any;
+}
+
+const { page } = Astro.props as { page: PageData };
+const pageMeta = page.meta || {};
+const pageTitle = pageMeta.title ?? "default title";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{pageTitle}</title>
+
+    {
+      Object.entries(pageMeta).map(([key, value]) => {
+        if (!value) return null;
+        const isOG = key.startsWith("og:");
+        const content = Array.isArray(value) ? value.join(", ") : value;
+        return (
+          // @ts-ignore
+
+          <meta
+            key={key}
+            {...(isOG ? { property: key } : { name: key })}
+            content={content}
+          />
+        );
+      })
+    }
+  </head>
+  <body>
+    <RenderPage data={page} />
+  </body>
+</html>

@@ -1,0 +1,55 @@
+
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+
+
+main {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+  padding: 2rem;
+  margin: 0 auto;
+
+  background-color: var(--color-Background);
+  color: var(--color-Text);
+  font-family: var(--font-Body);
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Typography */
+h1, h2, h3 {
+  font-family: var(--font-Heading);
+  color: var(--color-Accent);
+}
+
+p {
+  font-family: var(--font-Body);
+}
+
+/* Links */
+a {
+  color: var(--color-Link);
+  text-decoration: underline;
+}
+
+/* Accent usage — optional base styling */
+.accent {
+  color: var(--color-Accent);
+  font-weight: bold;
+}
+
+
+
+/* Optional: shared border and utility styles */
+.border-box {
+  border: 1px solid var(--color-Border);
+  padding: 1rem;
+  border-radius: 8px;
+}

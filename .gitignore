@@ -3,13 +3,15 @@
 Todo.md
 .env
 config/config.json
+test/
 
 # site public folder:
 # build output
 apps/site-public/dist/
 # generated types
 apps/site-public/.astro/
-
+# premium modules 
+apps/site-public/src/modules-premium
 # dependencies
 apps/site-public/node_modules/
 
