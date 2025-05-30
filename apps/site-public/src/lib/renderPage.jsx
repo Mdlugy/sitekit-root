@@ -1,5 +1,6 @@
 import React, { Suspense, useMemo } from "react";
 import RenderModule from "./renderModule";
+import { flattenThemeToCssVars } from "../helpers/flattenThemeToCssVars";
 // Dynamically import all modules from 'modules' and 'modules-premium'
 const layoutImports = {
   ...import.meta.glob("../layouts/*/index.jsx"),
@@ -7,6 +8,7 @@ const layoutImports = {
 
 export default function RenderPage({ data }) {
   const { layout, modules, theme } = data;
+  const flatTheme = flattenThemeToCssVars(theme);
   // Construct potential paths for the module
   const standardPath = `../layouts/${layout}/index.jsx`;
 
@@ -35,9 +37,9 @@ export default function RenderPage({ data }) {
   // Render the dynamically imported Module with its props
   return (
     <Suspense fallback={<div>Loading {layout}...</div>}>
-        <Layout theme={theme}>
+        <Layout theme={flatTheme}>
             {modules.map((module, index) => {
-                return <RenderModule key={index} data={module} />
+                return <RenderModule key={index} data={module} theme={flatTheme} />
             })}
         </Layout>
     </Suspense>

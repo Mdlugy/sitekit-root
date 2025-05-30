@@ -4,7 +4,7 @@ Todo.md
 .env
 config/config.json
 test/
-
+apps/site-public/public/images
 # site public folder:
 # build output
 apps/site-public/dist/

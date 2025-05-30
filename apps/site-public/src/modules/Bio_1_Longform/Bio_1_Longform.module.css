@@ -1,0 +1,30 @@
+.bioSection {
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+  padding: 4rem 10rem 4rem 10rem;
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: var(--color-text);
+}
+.bioSection h1 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--color-headingText);
+}
+.bioSection h2 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-headingText);
+  text-align: right;
+}
+.bioSection p {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--color-headingText);
+  text-align: left;
+}
