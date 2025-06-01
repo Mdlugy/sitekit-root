@@ -3,7 +3,7 @@ export default function Nav_Sticky_Logo({ content, theme }) {
 
   const {Logo, links} = content;
   return (
-    <nav style={theme} className="nav-sticky">
+    <nav styles={theme} className="nav-sticky">
       <div className="nav-container">
         <div className="nav-logo">
           <img src={Logo.url} alt={Logo.alt || "Logo"} className="nav-logo-image" />

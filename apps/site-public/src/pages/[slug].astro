@@ -2,6 +2,7 @@
 console.log("Loading page...");
 import { loadSiteData } from "../lib/loadSiteData.js";
 import RenderPage from "../lib/renderPage.jsx";
+import { extractScriptsFromPageData } from "../lib/extractScriptsFromPageData.js";
 
 export async function getStaticPaths() {
   const { data } = await loadSiteData();
@@ -11,6 +12,7 @@ export async function getStaticPaths() {
     props: { page: doc },
   }));
 }
+
 interface PageData {
   meta?: {
     title?: string;
@@ -22,6 +24,9 @@ interface PageData {
 const { page } = Astro.props as { page: PageData };
 const pageMeta = page.meta || {};
 const pageTitle = pageMeta.title ?? "default title";
+
+// Extract script content from page data
+const scripts: string[] = extractScriptsFromPageData(page);
 ---
 
 <html lang="en">
@@ -37,7 +42,6 @@ const pageTitle = pageMeta.title ?? "default title";
         const content = Array.isArray(value) ? value.join(", ") : value;
         return (
           // @ts-ignore
-
           <meta
             key={key}
             {...(isOG ? { property: key } : { name: key })}
@@ -49,5 +53,11 @@ const pageTitle = pageMeta.title ?? "default title";
   </head>
   <body>
     <RenderPage data={page} />
+
+    {
+      scripts.map((code, index) => (
+        <Fragment set:html={`<script>${code}</script>`} key={index} />
+      ))
+    }
   </body>
 </html>

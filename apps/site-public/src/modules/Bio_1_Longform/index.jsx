@@ -1,7 +1,6 @@
 import styles from './Bio_1_Longform.module.css';
 
 export default function Bio_1_Longform({id, content, theme}) {
-    console.log("Bio_1_Longform", id, content);
     return (<section id={id} className={styles.bioSection}  style={theme}>
   <h1>{content.title}</h1>
   {content.text.map((storychapter, index) => (<div key={index} className={styles.chapter}>

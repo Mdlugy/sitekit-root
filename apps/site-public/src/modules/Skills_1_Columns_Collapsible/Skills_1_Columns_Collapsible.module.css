@@ -1,0 +1,116 @@
+.wrapper {
+  padding: 4rem 2rem;
+  background-color: var(--color-primary, #f9f9f9);
+  color: var(--color-text, #1f2937);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.headline {
+  font-family: var(--font-heading, sans-serif);
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-secondary, #111827);
+  text-align: center;
+}
+
+.subheadline {
+  font-family: var(--font-body, serif);
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--color-surface, #6b7280);
+  max-width: 40ch;
+  text-align: center;
+}
+
+/* Collapsible Section */
+.collapsibleWrapper {
+  max-height: 1500px;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  width: 100%;
+}
+
+.collapsed {
+  max-height: 0;
+  padding: 0;
+  margin: 0;
+}
+
+/* Skills Columns */
+.columns {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.column {
+  flex: 1;
+  min-width: 280px;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+  scroll-behavior: smooth;
+  border-right: 1px solid var(--color-border, #e5e7eb);
+}
+
+.column:last-child {
+  border-right: none;
+}
+
+/* Category Title */
+.column h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-headingText, #111827);
+  margin-bottom: 0.5rem;
+  position: sticky;
+  top: 0;
+  background: var(--color-primary, #f9f9f9);
+  padding: 0.5rem 0;
+  z-index: 1;
+}
+
+/* Toggle Button */
+.toggleButton {
+  margin-top: 1rem;
+  font-size: 1rem;
+  background: var(--color-accent, #629e7e);
+  color: var(--color-background, #ffffff);
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.toggleButton:hover {
+  background: var(--color-background, #2f2c6f);
+  color: var(--color-accent, #ffffff);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .columns {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .column {
+    max-height: 300px;
+    width: 90%;
+    border-right: none;
+    border-bottom: 1px solid var(--color-border, #e5e7eb);
+    padding-bottom: 1rem;
+  }
+}
