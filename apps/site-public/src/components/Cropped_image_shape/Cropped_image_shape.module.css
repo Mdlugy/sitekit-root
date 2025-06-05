@@ -17,3 +17,16 @@
   object-position: center;
   transform: var(--transform);
 }
+@media (max-width: 768px) {
+    .bubble {
+    height: auto;
+    border-top-right-radius: 50% 50%;
+  }
+
+  .bubble img {
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}

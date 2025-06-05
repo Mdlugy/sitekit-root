@@ -6,8 +6,9 @@ export default function Contact_1_Basic({ id, content, theme }) {
     <section id={id} className={styles.wrapper} style={theme}>
       <h1 className={styles.title}>{content.title}</h1>
       <p className={styles.subtitle}>{content.subTitle}</p>
-      <p className={styles.location}>📍 {content.location}</p>
       <div className={styles.socials}>
+        <p className={styles.socialLink}>📍 {content.location}</p>
+
         {content.socials.map((social, index) => (
           <a
             key={index}

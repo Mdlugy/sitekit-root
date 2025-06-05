@@ -6,7 +6,7 @@ export default function Hero_1_Image_3_Skills({id, content, theme }) {
 
   return (
     <section id = {id} styles= {theme} className={styles.hero_section_wrapper}>
-          <div className={styles.imageColumn}>
+        <div className={styles.imageColumn}>
         <Cropped_image_shape
         personal_image={content.personalImage}
         theme={theme}
@@ -15,6 +15,8 @@ export default function Hero_1_Image_3_Skills({id, content, theme }) {
    
     <div className={styles.textColumn}>
     <div className={styles.textGroup}>
+      <h1 className={styles.hero_section_title}>{content.personalName}</h1>
+
       <h1 className={styles.headline}>{content.Headline}</h1>
       <p className={styles.subheadline}>{content.subHeadline}</p>
       </div>

@@ -31,3 +31,6 @@ apps/site-public/.DS_Store
 
 # jetbrains setting folder
 apps/site-public/.idea/
+
+# Local Netlify folder
+.netlify
