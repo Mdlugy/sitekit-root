@@ -1,52 +1,52 @@
-const scroller = document.querySelector("[data-scroll-carousel]");
-const dragSpeed = 1.5; // Increase this for snappier response
+const _MID_scroller = document.querySelector("[data-scroll-carousel]");
+const _MID_dragSpeed = 1.5; // Increase this for snappier response
 
-if (scroller) {
-    let isDown = false;
-    let startX, scrollLeft;
+if (_MID_scroller) {
+    let _MID_isDown = false;
+    let _MID_startX, _MID_scrollLeft;
 
-    scroller.addEventListener("mousedown", (e) => {
-        isDown = true;
-        scroller.classList.add("dragging");
-        startX = e.pageX;
-        scrollLeft = scroller.scrollLeft;
+    _MID_scroller.addEventListener("mousedown", (e) => {
+        _MID_isDown = true;
+        _MID_scroller.classList.add("dragging");
+        _MID_startX = e.pageX;
+        _MID_scrollLeft = _MID_scroller._MID_scrollLeft;
     });
 
-    scroller.addEventListener("mouseleave", () => {
-        isDown = false;
-        scroller.classList.remove("dragging");
+    _MID_scroller.addEventListener("mouseleave", () => {
+        _MID_isDown = false;
+        _MID_scroller.classList.remove("dragging");
     });
 
-    scroller.addEventListener("mouseup", () => {
-        isDown = false;
-        scroller.classList.remove("dragging");
+    _MID_scroller.addEventListener("mouseup", () => {
+        _MID_isDown = false;
+        _MID_scroller.classList.remove("dragging");
     });
 
-    scroller.addEventListener("mousemove", (e) => {
-        if (!isDown) return;
+    _MID_scroller.addEventListener("mousemove", (e) => {
+        if (!_MID_isDown) return;
         e.preventDefault();
-        const x = e.pageX;
-        const walk = (x - startX) * dragSpeed;
-        scroller.scrollLeft = scrollLeft - walk;
+        const _MID_x = e.pageX;
+        const _MID_walk = (_MID_x - _MID_startX) * _MID_dragSpeed;
+        _MID_scroller._MID_scrollLeft = _MID_scrollLeft - _MID_walk;
     });
 
 
 
     // Touch (optional — works without)
-    scroller.addEventListener("touchstart", (e) => {
-        isDown = true;
-        startX = e.touches[0].pageX;
-        scrollLeft = scroller.scrollLeft;
+    _MID_scroller.addEventListener("touchstart", (e) => {
+        _MID_isDown = true;
+        _MID_startX = e.touches[0].pageX;
+        _MID_scrollLeft = _MID_scroller._MID_scrollLeft;
     });
 
-    scroller.addEventListener("touchmove", (e) => {
-        if (!isDown) return;
-        const x = e.touches[0].pageX;
-        const walk = (x - startX) * dragSpeed;
-        scroller.scrollLeft = scrollLeft - walk;
+    _MID_scroller.addEventListener("touchmove", (e) => {
+        if (!_MID_isDown) return;
+        const _MID_x = e.touches[0].pageX;
+        const _MID_walk = (_MID_x - _MID_startX) * _MID_dragSpeed;
+        _MID_scroller._MID_scrollLeft = _MID_scrollLeft - _MID_walk;
     });
 
-    scroller.addEventListener("touchend", () => {
-        isDown = false;
+    _MID_scroller.addEventListener("touchend", () => {
+        _MID_isDown = false;
     });
 }

@@ -52,6 +52,9 @@ export async function loadSiteData() {
             documents.push(JSON.parse(raw));
         }
     }
+
+    // find a slug named "home" and set
+
     const routingData = documents.map((doc) => ({
         slug: doc.slug,
         type: doc.type,

@@ -1,0 +1,30 @@
+.bioSectionWrapper {
+  width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+@media (max-width: 768px) {
+
+.bioSection h1 {
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chapterTitle {
+  font-size: clamp(1.25rem, 4vw, 1.5rem);
+  text-align: right;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.paragraph {
+  font-size: clamp(1rem, 3.5vw, 1.15rem);
+  text-align: left;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  white-space: pre-line;
+}
+}

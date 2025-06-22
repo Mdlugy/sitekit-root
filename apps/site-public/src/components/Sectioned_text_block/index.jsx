@@ -1,9 +1,8 @@
-import styles from './Bio_1_Longform.module.css';
+import styles from './Sectioned_text_block.module.css';
 
-export default function Bio_1_Longform({ id, content, theme }) {
+export default function Sectioned_text_block({ id, content, theme }) {
   return (
-    <section id={id} className={styles.bioSection} style={theme}>
-      <div className={styles.bioSectionWrapper}>
+      <div id={id} className={styles.textSectionWrapper}>
         <h1>{content.title}</h1>
         {content.text.map((storychapter, index) => (
           <div key={index}>
@@ -14,6 +13,5 @@ export default function Bio_1_Longform({ id, content, theme }) {
           </div>
         ))}
       </div>
-    </section>
   );
 }

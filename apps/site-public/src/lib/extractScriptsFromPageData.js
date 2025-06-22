@@ -25,7 +25,7 @@ export function extractScriptsFromPageData(pageData) {
             // convert the script to a string 
             script = script.toString();
             // Replace all placeholderID tokens with the actual module instance ID
-            script = script.replace(/placeholderID/g, instanceId);
+            script = script.replace(/_MID_/g, instanceId);
             console.log(`Extracted script for module ${moduleName} with ID ${instanceId}`);
             return script;
         })

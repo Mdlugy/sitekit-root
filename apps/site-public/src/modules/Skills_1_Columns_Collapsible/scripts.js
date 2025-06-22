@@ -1,15 +1,14 @@
-const id = "placeholderID";
-const button = document.querySelector(`#placeholderID #toggleSkills`);
-const wrapper = document.querySelector(`#skills [data-collapsible-wrapper]`);
+const _MID_button = document.querySelector(`#_MID_ToggleSkills`);
+const _MID_wrapper = document.querySelector(`#_MID_CollapsibleWrapper`);
 
 
 // Initialize button text
-wrapper.hidden = true; // Start with the wrapper hidden
-button.textContent = "Show Skills";
+_MID_wrapper.hidden = true; // Start with the wrapper hidden
+_MID_button.textContent = "Show Skills";
 
-button.addEventListener("click", () => {
+_MID_button.addEventListener("click", () => {
 
-    const isCollapsed = wrapper.hidden = !wrapper.hidden;
+    const _MID_isCollapsed = _MID_wrapper.hidden = !_MID_wrapper.hidden;
 
-    button.textContent = isCollapsed ? "Show Skills" : "Hide Skills";
+    _MID_button.textContent = _MID_isCollapsed ? "Show Skills" : "Hide Skills";
 });

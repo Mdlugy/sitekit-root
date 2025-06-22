@@ -11,11 +11,11 @@ export default function Skills_1_Columns_Collapsible({ id, content, theme }) {
       <h1 className={styles.headline}>{content.Headline}</h1>
       <p className={styles.subheadline}>{content.subHeadline}</p>
 
-      <button id = "toggleSkills" className={styles.toggleButton}>
+      <button id = {`${id}ToggleSkills`} className={styles.toggleButton}>
       </button>
 
       <div
-        data-collapsible-wrapper
+        id = {`${id}CollapsibleWrapper`}
 
         className={styles.collapsibleWrapper}
       >
